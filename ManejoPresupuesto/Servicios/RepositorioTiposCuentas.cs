@@ -51,7 +51,7 @@ namespace ManejoPresupuesto.Servicios
             return await connection.QueryAsync<TipoCuenta>(@"SELECT Id, Nombre, Orden FROM TiposCuentas
                                                            WHERE UsuarioId = @UsuarioId ORDER BY Orden", new {usuarioId });
         }
-
+        
         public async Task Actualizar(TipoCuenta tipoCuenta)
         {
             using var connection = new SqlConnection(connectionString);
